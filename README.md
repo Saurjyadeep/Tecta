@@ -27,32 +27,32 @@ yfinance is not affiliated, endorsed or vetted by Yahoo, Inc. It's an open-sourc
 Local Development
 
 1. Clone the repository:  
-git clone https://github.com/Saurjyadeep/Tecta.git  
-cd tecta
+`git clone https://github.com/Saurjyadeep/Tecta.git`  
+`cd tecta`
 
 2. Create and activate a virtual environment  
-python -m venv venv  
-venv\Scripts\activate
+`python -m venv venv`  
+`venv\Scripts\activate`
 
 3. Install dependencies:  
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 4. Run the API:      
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+`uvicorn app.main:app --reload --host 127.0.0.1 --port 8000`
 
 5. Test in browser  
-Swagger docs: http://localhost:8000/docs
+Swagger docs: `http://localhost:8000/docs`
 
 
 Running with Docker
 1. Build the Docker image  
-docker build -t tecta-invest .
+`docker build -t tecta-invest .`
 
 2. Run the container  
-docker run -p 8000:8000 tecta-invest
+`docker run -p 8000:8000 tecta-invest`
 
 3. Test in browser  
-Swagger docs: http://localhost:8000/docs
+Swagger docs: `http://localhost:8000/docs`
 
 # CI/CD Pipeline Outline using GitHub Actions
 
