@@ -58,6 +58,7 @@ Running with Docker
 Swagger docs: `http://localhost:8000/docs`
 
 # API Endpoint 
+- Example
 Call  
 curl "http://localhost:8000/api/stats?ticker=MSFT&start=2023-01-01&end=2023-12-31"  
 
@@ -100,4 +101,3 @@ Response
    - Pull latest Docker image
    - Restart container on server
 
-}
