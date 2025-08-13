@@ -40,18 +40,18 @@ pip install -r requirements.txt
 4. Run the API:      
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 
-5. Test in browser
+5. Test in browser  
 Swagger docs: http://localhost:8000/docs
 
 
 Running with Docker
-1. Build the Docker image
+1. Build the Docker image  
 docker build -t tecta-invest .
 
-2. Run the container
+2. Run the container  
 docker run -p 8000:8000 tecta-invest
 
-3. Test in browser
+3. Test in browser  
 Swagger docs: http://localhost:8000/docs
 
 # CI/CD Pipeline Outline using GitHub Actions
