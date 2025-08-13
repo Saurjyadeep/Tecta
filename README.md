@@ -43,6 +43,9 @@ Local Development
 5. Test in browser  
 Swagger docs: `http://localhost:8000/docs`
 
+- Example request:  
+GET /api/stats?ticker=MSFT&start=2023-01-01&end=2023-12-31
+
 
 Running with Docker
 1. Build the Docker image  
@@ -53,6 +56,19 @@ Running with Docker
 
 3. Test in browser  
 Swagger docs: `http://localhost:8000/docs`
+
+# API Endpoint 
+Call  
+curl "http://localhost:8000/api/stats?ticker=MSFT&start=2023-01-01&end=2023-12-31"  
+
+Response  
+{
+  "ticker": "MSFT",
+  "high": 315.12,
+  "low": 230.55,
+  "average_close": 278.32,
+  "last_close": 310.20
+
 
 # CI/CD Pipeline Outline using GitHub Actions
 
@@ -67,15 +83,21 @@ Swagger docs: `http://localhost:8000/docs`
 3. **Run automated tests**:
    - Use `pytest` or `unittest`
    - Ensure all tests pass
+   - Example test flow:
+    `def test_api_response(client):`  
+        `response = client.get("/api/stats?ticker=MSFT&start=2023-01-01&end=2023-12-31")`  
+        `assert response.status_code == 200`  
+        `assert "high" in response.json()`
 
 4. **Build Docker image**:
-   - `docker build -t myusername/tecta-invest .`
+   - `docker build -t saurjyadeep/tecta-invest .`
 
 5. **Push Docker image to registry**:
    - Authenticate with Docker Hub or GitHub Container Registry
-   - `docker push myusername/tecta-invest`
+   - `docker push saurjyadeep/tecta-invest`
 
 6. **Deploy to server**:
    - Pull latest Docker image
    - Restart container on server
 
+}
